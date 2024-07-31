@@ -13,12 +13,6 @@
 // app.set("view engine", "ejs");
 // app.use("/public", express.static(path.join(__dirname, "static")));
 // app.use("/peerjs", peerServer);
-// app.use(express.static('public'));
-// app.use(bodyParser.json());
-// require('dotenv').config();
-// const { GoogleGenerativeAI } = require('@google/generative-ai');
-
-
 
 // app.get("/", (req, res) => {
 //     res.sendFile(path.join(__dirname, "static", "index.html"));
@@ -67,50 +61,7 @@
 //     });
 // });
 
-
-
-// // Initialize GoogleGenerativeAI
-// const apiKey = process.env.AI_API_KEY;
-// if (!apiKey) {
-//     throw new Error("API key not found. Please set the AI_API_KEY environment variable.");
-// }
-
-// const genAI = new GoogleGenerativeAI(apiKey);
-// const model = genAI.getGenerativeModel({
-//     model: 'gemini-1.5-flash',
-// });
-
-// const generationConfig = {
-//     temperature: 1,
-//     topP: 0.95,
-//     topK: 64,
-//     maxOutputTokens: 8192,
-//     responseMimeType: 'text/plain',
-// };
-
-// app.use(express.static('public'));
-// app.use(express.json());
-
-// app.post('/send-message', async (req, res) => {
-//     const { message } = req.body;
-
-//     try {
-//         const chatSession = model.startChat({
-//             generationConfig,
-//             history: [],
-//         });
-
-//         const result = await chatSession.sendMessage(message);
-//         res.json({ reply: result.response.text() });
-//     } catch (error) {
-//         res.status(500).json({ error: 'An error occurred while processing the request.' });
-//     }
-// });
-
-
-
-
-// server.listen(process.env.PORT || 3030);
+// server.listen(process.env.PORT || 3030)
 
 
 const express = require("express");
