@@ -85,6 +85,7 @@ app.set("view engine", "ejs");
 
 // Static files
 app.use("/public", express.static(path.join(__dirname, "static")));
+
 app.use("/peerjs", peerServer);
 app.use(express.static('public'));
 
@@ -174,6 +175,10 @@ app.post('/send-message', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'An error occurred while processing the request.' });
     }
+});
+
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static', 'notes.html'));
 });
 
 // Start server
