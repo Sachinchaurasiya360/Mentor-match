@@ -94,8 +94,12 @@ app.use(express.json());
 
 // Routes
 app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "static", "login.html"));
+});
+app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, "static", "index.html"));
 });
+
 
 app.get("/join", (req, res) => {
     res.redirect(
