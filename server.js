@@ -85,11 +85,13 @@ app.set("view engine", "ejs");
 
 // Static files
 app.use("/public", express.static(path.join(__dirname, "static")));
+app.use("/static", express.static(path.join(__dirname, "static")));
+
 
 app.use("/peerjs", peerServer);
 app.use(express.static('public'));
 
-// JSON body parsing
+
 app.use(express.json());
 
 // Routes
@@ -97,7 +99,13 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "static", "login.html"));
 });
 app.get("/home", (req, res) => {
+    res.sendFile(path.join(__dirname, "static", "home.html"));
+});
+app.get("/index", (req, res) => {
     res.sendFile(path.join(__dirname, "static", "index.html"));
+});
+app.get("/sachin", (req, res) => {
+    res.sendFile(path.join(__dirname, "static", "aboutmentor.html"));
 });
 
 
@@ -145,7 +153,7 @@ io.on("connection", (socket) => {
     });
 });
 
-// Initialize GoogleGenerativeAI
+
 const apiKey = process.env.AI_API_KEY;
 if (!apiKey) {
     throw new Error("API key not found. Please set the AI_API_KEY environment variable.");

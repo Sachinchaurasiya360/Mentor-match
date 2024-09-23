@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentor Details</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.mentor-detail-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.mentor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mentor-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.mentor-info {
+  padding: 20px;
+}
+
+.mentor-name {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.mentor-title {
+  font-size: 20px;
+  color: #777;
+  margin: 10px 0;
+}
+
+.mentor-description {
+  font-size: 16px;
+  color: #555;
+  margin: 20px 0;
+}
+
+.mentor-skills {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.mentor-skills li {
+  background-color: #6d5bba;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.calendly-widget {
+  margin-top: 30px;
+}
+
+.book-call-button {
+  text-decoration: none;
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.book-call-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mentor-detail-container {
+    margin: 20px;
+  }
+}
+
+  </style>
+
+  <body>
+    <!-- Mentor Detail Section -->
+    <div class="mentor-detail-container">
+      <div class="mentor-card">
+        <img
+          src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
+          alt="Mentor Image"
+          class="mentor-image"
+        />
+        <div class="mentor-info">
+          <h1 class="mentor-name">Sachin Chaurasiya</h1>
+          <p class="mentor-title">AI/ML Specialist</p>
+          <p class="mentor-description">
+            Sachin is an experienced AI/ML specialist with a strong background
+            in web development, Node.js, Flask, and React. Passionate about
+            mentoring students and guiding them through hackathons and coding
+            challenges. He has worked on various AI projects and is actively
+            involved in the tech community.
+          </p>
+          <ul class="mentor-skills">
+            <li>Machine Learning</li>
+            <li>Artificial Intelligence</li>
+            <li>Web Development</li>
+            <li>Node.js</li>
+            <li>Flask</li>
+            <li>React</li>
+          </ul>
+          <div class="calendly-widget">
+            <!-- Add Calendly API key or link here -->
+            <a href="#" class="book-call-button">Book a Call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/mrsachinchaurasiya/30min" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
