@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    /* background-image: url("https://hbr.org/resources/images/article_assets/2022/09/R2206L_LEES.jpg"); */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Container for the page */
+div .Name-Page {
+
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: block;
+}
+
+/* Form Styles */
+.form {
+    position: relative;
+    margin: 10% 20%;
+}
+
+.known-form, .unknown-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 150px;
+}
+
+.known-form input, .unknown-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.known-form button, .unknown-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.known-form button:hover, .unknown-form button:hover {
+    background-color: #0056b3;
+}
+
+.known-form p, .unknown-form p {
+    text-align: center;
+    margin: 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Display first form by default */
+.known-form {
+    display: flex;
+
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .Name-Page {
+        width: 90%;
+    }
+}
+
+#btn1{
+    /* display: inline-block; */
+    display: inline-block;
+    margin-inline-start: 40%;
+}
+
+@media (max-width : 1000px) {
+    #btn2{
+        display: inline-block;
+
+        margin-inline-start: 40%;
+        margin-top: 10px;
+    }
+}

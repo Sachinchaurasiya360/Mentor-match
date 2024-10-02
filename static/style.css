@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(53, 57, 60);
+    background-color: rgb(235, 239, 241);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -30,7 +30,7 @@ body {
     margin: 0 0 15px;
     padding: 20px;
     box-sizing: border-box;
-    font-size: 14px
+    font-size: 16px
 }
 
 .form button {
@@ -41,14 +41,14 @@ body {
     border: 0;
     padding: 10px;
     color: #ffffff;
-    font-size: 10px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .form p {
     font-family: "Roboto", "sans-serif";
     font-size: 60%;
-    margin: 15px
+    margin: 16px
 }
 
 .form button:hover {
@@ -69,5 +69,5 @@ body {
     cursor: pointer;
 }
 .button:hover {
-    background-color: #0056b3;
+    background-color: #9ebad8;
 }

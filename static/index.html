@@ -6,12 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mentor Match</title>
-    <link rel="stylesheet" href="public/style.css" />
+    <!-- <link rel="stylesheet" href="public/style.css" /> -->
     <link rel="icon" href="images.jpeg" />
-
-
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script
+    <link rel="stylesheet" href="D:\STUDY\Vishwaniketan\vap\sem 5 vap mern stack\Mentor Match\mentor-match-main2\mentor-match\static\index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 
@@ -21,7 +19,7 @@
             <form class="known-form" action="/join">
                 <input type="text" placeholder="Enter your name" name="name" />
                 <button>Host a Meeting</button>
-                <p><a href="javascript:show()">Join Meeting?</a></p>
+                <p><a href="javascript:show()">Host Meeting?</a></p>
             </form>
 
             <form class="unknown-form" action="/joinold">
@@ -29,7 +27,7 @@
                 <input type="text" placeholder="Enter Meeting Id" name="meeting_id" />
                 <button>Join Meeting</button>
                 <p>
-                    <a href="javascript:show()">Host Meeting?</a>
+                    <a href="javascript:show()">Join Meeting?</a>
                 </p>
             </form>
         </div>
@@ -39,13 +37,9 @@
             $('form').animate({ height:"toggle",opacity:"toggle"},"slow")
         }
 
-
-
-
-    
     </script>
 
-    <button class="button" onclick="redirectToPage()">Talk to Ai</button>
+    <button class="button" id="btn1" onclick="redirectToPage()">Talk to Ai</button>
 
 <script>
     function redirectToPage() {
@@ -60,7 +54,7 @@
         window.location.href = 'notes.html'; 
     }
 </script>
-<button class="button" onclick="redirectTonotes()">Download Your Notes</button>
+<button class="button" id="btn2" onclick="redirectTonotes()">Download Your Notes</button>
 
 
 
