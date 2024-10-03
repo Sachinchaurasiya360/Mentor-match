@@ -1,69 +1,3 @@
-// const express = require("express");
-// const app = express();
-// const server = require("http").Server(app);
-// const { v4: uuidv4 } = require("uuid");
-// const io = require("socket.io")(server);
-// const { ExpressPeerServer } = require("peer");
-// const url = require("url");
-// const peerServer = ExpressPeerServer(server, {
-//     debug: true,
-// });
-// const path = require("path");
-
-// app.set("view engine", "ejs");
-// app.use("/public", express.static(path.join(__dirname, "static")));
-// app.use("/peerjs", peerServer);
-
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "static", "index.html"));
-// });
-
-// app.get("/join", (req, res) => {
-//     res.redirect(
-//         url.format({
-//             pathname: `/join/${uuidv4()}`,
-//             query: req.query,
-//         })
-//     );
-// });
-
-// app.get("/joinold", (req, res) => {
-//     res.redirect(
-//         url.format({
-//             pathname: req.query.meeting_id,
-//             query: req.query,
-//         })
-//     );
-// });
-
-// app.get("/join/:rooms", (req, res) => {
-//     res.render("room", { roomid: req.params.rooms, Myname: req.query.name });
-// });
-
-// io.on("connection", (socket) => {
-//     socket.on("join-room", (roomId, id, myname) => {
-//         socket.join(roomId);
-//         socket.to(roomId).broadcast.emit("user-connected", id, myname);
-
-//         socket.on("messagesend", (message) => {
-//             console.log(message);
-//             io.to(roomId).emit("createMessage", message);
-//         });
-
-//         socket.on("tellName", (myname) => {
-//             console.log(myname);
-//             socket.to(roomId).broadcast.emit("AddName", myname);
-//         });
-
-//         socket.on("disconnect", () => {
-//             socket.to(roomId).broadcast.emit("user-disconnected", id);
-//         });
-//     });
-// });
-
-// server.listen(process.env.PORT || 3030)
-
-
 const express = require("express");
 const app = express();
 const server = require("http").Server(app);
@@ -74,6 +8,9 @@ const url = require("url");
 const path = require("path");
 require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const cors = require("cors");
+const shortid = require("shortid");
+const Razorpay = require("razorpay");
 
 // Initialize Peer Server
 const peerServer = ExpressPeerServer(server, {
@@ -94,6 +31,15 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
+
+const razorpay = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET,
+  });
+
+
+
+
 // Routes
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "static", "login.html"));
@@ -108,6 +54,9 @@ app.get("/sachin", (req, res) => {
     res.sendFile(path.join(__dirname, "static", "aboutmentor.html"));
 });
 
+app.get("/chatbot", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "chatbot.html"));
+});
 
 app.get("/join", (req, res) => {
     res.redirect(
@@ -190,8 +139,38 @@ app.post('/send-message', async (req, res) => {
 });
 
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'static', 'notes.html'));
+    res.sendFile(path.join(__dirname, 'public', 'notes.html'));
 });
+
+
+
+
+app.post("/razorpay", async (req, res) => {
+    const payment_capture = 1;
+    const amount = 499;
+    const currency = "INR";
+  
+    const options = {
+      amount: amount * 100,
+      currency,
+      receipt: shortid.generate(),
+      payment_capture,
+    };
+  
+    try {
+      const response = await razorpay.orders.create(options);
+      console.log(response);
+      res.json({
+        id: response.id,
+        currency: response.currency,
+        amount: response.amount,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+
 
 // Start server
 server.listen(process.env.PORT || 3030, () => {
