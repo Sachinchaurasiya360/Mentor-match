@@ -57,7 +57,9 @@ app.get("/sachin", (req, res) => {
 app.get("/chatbot", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "chatbot.html"));
 });
-
+app.get("/blog", (req, res) => {
+    res.sendFile(path.join(__dirname, "static", "blog.html"));
+});
 app.get("/join", (req, res) => {
     res.redirect(
         url.format({

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    color: #fff;
+    font-size: 28px;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Blog Post Section */
+.blog-posts {
+    margin: 50px 0;
+}
+
+.post {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post img {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-content h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-content .meta {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.post-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.post-content .read-more {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #2980b9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.post-content .read-more:hover {
+    background-color: #3498db;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Mentor Match</h1>
+            </div>
+            
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-posts">
+        <div class="container">
+            <!-- Blog Post 1 -->
+            <div class="post">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Artificial Intelligence">
+                <div class="post-content">
+                    <h2>Exploring Artificial Intelligence</h2>
+                    <p class="meta">Posted on October 3, 2024 by Sachin Chaurasiya</p>
+                    <p>Artificial Intelligence is revolutionizing industries across the globe. Learn about its core concepts and applications in this article.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="post">
+                <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514" alt="Web Development Workspace">
+                <div class="post-content">
+                    <h2>Mastering Web Development</h2>
+                    <p class="meta">Posted on September 20, 2024 by Sachin Chaurasiya</p>
+                    <p>Web development forms the backbone of the modern internet. Get a deep dive into essential technologies for front-end and back-end development.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="post">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Digital Technology">
+                <div class="post-content">
+                    <h2>Future of Digital Technology</h2>
+                    <p class="meta">Posted on September 10, 2024 by Sachin Chaurasiya</p>
+                    <p>Digital technology is rapidly evolving. Discover trends and innovations that will shape the tech landscape in the coming years.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tech Insights. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
