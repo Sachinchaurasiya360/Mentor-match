@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative AI Chat</title>
+    <title>Generative AI Chatbot</title>
     <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Mentor Match Chatbot</h1>
-        <form id="chatForm">
-            <textarea id="messageInput" placeholder="Type your message here..." required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <div id="responseOutput"></div>
+    <div class="chat-window">
+        <div id="responseOutput" class="chat-output"></div>
+        <div class="chat-input-area">
+            <form id="chatForm">
+                <input type="text" id="subject1" placeholder="Ask your question..." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
