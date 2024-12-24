@@ -12,15 +12,12 @@ const cors = require("cors");
 const shortid = require("shortid");
 const Razorpay = require("razorpay");
 
-// Initialize Peer Server
 const peerServer = ExpressPeerServer(server, {
   debug: true,
 });
 
-// Set view engine
 app.set("view engine", "ejs");
 
-// Static files
 app.use("/public", express.static(path.join(__dirname, "static")));
 app.use("/static", express.static(path.join(__dirname, "static")));
 
@@ -76,7 +73,6 @@ app.get("/join/:rooms", (req, res) => {
   res.render("room", { roomid: req.params.rooms, Myname: req.query.name });
 });
 
-// Socket.io connection for our video call featuress
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, id, myname) => {
@@ -102,7 +98,7 @@ io.on("connection", (socket) => {
 const apiKey = process.env.AI_API_KEY;
 if (!apiKey) {
   throw new Error(
-    "API key not found. env variable chek karrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+    "API key not found. env variable chek kar"
   );
 }
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -118,7 +114,7 @@ const generationConfig = {
   responseMimeType: "text/plain",
 };
 
-// Chat API route
+
 app.post("/send-message", async (req, res) => {
   const { message } = req.body;
 
@@ -177,7 +173,6 @@ app.post("/razorpay", async (req, res) => {
   }
 });
 
-// Start server
 server.listen(process.env.PORT || 3030, () => {
   console.log(`Server is running on port ${process.env.PORT || 3030}`);
 });

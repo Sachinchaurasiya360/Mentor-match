@@ -3,19 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative AI Chatbot</title>
-    <link rel="stylesheet" href="chatbot.css">
+    <title>AI Mentor - MentorHub</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <div class="chat-window">
-        <div id="responseOutput" class="chat-output"></div>
-        <div class="chat-input-area">
-            <form id="chatForm">
-                <input type="text" id="subject1" placeholder="Ask your question..." required>
-                <button type="submit">Send</button>
-            </form>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/" class="navbar-logo">MentorHub</a>
+            <div class="menu-toggle" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="http://localhost:3030/index">Home</a></li>
+                <li><a href="http://localhost:3030/home">Mentors</a></li>
+                <li><a href="/chatbot" class="active">AI Mentor</a></li>
+                <li><a href="/notes">Notes</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="chatbot-container">
+        <!-- Sidebar -->
+        <aside class="chatbot-sidebar">
+            <div class="chatbot-header">
+                <h2>AI Mentor</h2>
+                <p>Your personal AI mentor is here to help you with programming, career advice, and technical concepts.</p>
+            </div>
+            
+            <h3 style="margin-bottom: 1rem; color: var(--text-primary);">Suggested Topics</h3>
+            <ul class="chat-suggestions">
+                <li class="chat-suggestion">
+                    <i class="fas fa-code"></i> How to get started with web development?
+                </li>
+                <li class="chat-suggestion">
+                    <i class="fas fa-brain"></i> Explain machine learning concepts
+                </li>
+                <li class="chat-suggestion">
+                    <i class="fas fa-laptop-code"></i> Best practices for coding interviews
+                </li>
+                <li class="chat-suggestion">
+                    <i class="fas fa-briefcase"></i> Career advice for software engineers
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Chat Window -->
+        <main class="chat-window">
+            <div class="chat-header">
+                <div class="ai-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chat-header-info">
+                    <h3>AI Mentor</h3>
+                    <p>Online • Ready to help</p>
+                </div>
+            </div>
+
+            <div id="responseOutput" class="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message ai">
+                    <div class="message-content">
+                        Hello! I'm your AI Mentor. How can I help you today with programming, career advice, or technical concepts?
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <form id="chatForm" class="chat-form">
+                    <input 
+                        type="text" 
+                        id="subject1" 
+                        class="chat-input-field"
+                        placeholder="Type your question here..." 
+                        required
+                    >
+                    <button type="submit" class="chat-send-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </main>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle('active');
+        }
+
+        // Handle chat suggestions
+        document.querySelectorAll('.chat-suggestion').forEach(suggestion => {
+            suggestion.addEventListener('click', () => {
+                document.getElementById('subject1').value = suggestion.textContent.trim();
+            });
+        });
+
+        // Handle chat form submission
+        document.getElementById('chatForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const input = document.getElementById('subject1');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message
+                addMessage(message, 'user');
+                input.value = '';
+
+                // Simulate AI response (replace with actual API call)
+                setTimeout(() => {
+                    addMessage('I understand your question about "' + message + '". Let me help you with that...', 'ai');
+                }, 1000);
+            }
+        });
+
+        function addMessage(content, type) {
+            const messagesDiv = document.getElementById('responseOutput');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = content;
+            
+            const timeDiv = document.createElement('div');
+            timeDiv.className = 'message-time';
+            timeDiv.textContent = 'Just now';
+            
+            messageDiv.appendChild(contentDiv);
+            messageDiv.appendChild(timeDiv);
+            messagesDiv.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
 </body>
 </html>

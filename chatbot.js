@@ -20,7 +20,7 @@ const {
 const apiKey = process.env.AI_API_KEY; 
 
 if (!apiKey) {
-    throw new Error("API key not found. Please set the AI_API_KEY environment variable.");
+    throw new Error("API key not found. Please set the gemini _API_KEY environment variable.");
 }
 
 const genAI = new GoogleGenerativeAI(apiKey);

@@ -1,573 +1,206 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mentor Profiles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MentorHub - Find Your Perfect Mentor</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #f4f4f9;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Navbar Styles */
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 30px;
-        background: linear-gradient(135deg, #6d5bba, #8a2387);
-        color: white;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-      .navbar-logo {
-        font-size: 24px;
-        font-weight: 600;
-      }
-      .navbar-menu {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 25px;
-      }
-      .navbar-menu li {
-        display: inline-block;
-      }
-      .navbar-menu a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        font-size: 16px;
-        transition: color 0.3s ease;
-      }
-      .navbar-menu a:hover {
-        color: #ffdd57;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      @media (max-width: 768px) {
-        .navbar-menu {
-          display: none;
-          flex-direction: column;
-          background-color: rgba(0, 0, 0, 0.8);
-          position: absolute;
-          top: 60px;
-          right: 0;
-          width: 200px;
-          padding: 15px;
-          border-radius: 8px;
-        }
-        .navbar-menu li {
-          margin-bottom: 15px;
-        }
-        .menu-toggle {
-          display: block;
-          cursor: pointer;
-        }
-        .menu-toggle.active + .navbar-menu {
-          display: flex;
-        }
-      }
-      .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px;
-        background: white;
-        transition: all 0.3s ease;
-      }
-      .menu-toggle.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-      .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-      .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
-
-      /* Mentor Profiles Styles */
-      .wrap {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 20px;
-      }
-      .box {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        max-width: 300px;
-        text-align: center;
-        padding: 20px;
-        transition: transform 0.3s ease;
-      }
-      .box:hover {
-        transform: translateY(-10px);
-      }
-      .box-image {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-      .title-flex {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
-      }
-      .box-title {
-        font-size: 22px;
-        font-weight: 600;
-        margin: 0;
-      }
-      .user-follow-info {
-        font-size: 14px;
-        color: #888;
-      }
-      .description {
-        font-size: 16px;
-        color: #555;
-        margin-bottom: 20px;
-      }
-      .button {
-        text-decoration: none;
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-        display: inline-block;
-        margin-bottom: 10px; /* Adjusts the space between buttons */
-      }
-      .button:hover {
-        background-color: #0056b3;
-      }
-    </style>
-  </head>
-  <body>
-    Navbar -->
-    <!-- <nav class="navbar">
-      <div class="navbar-logo">MentorHub</div>
-      <div class="menu-toggle" onclick="toggleMenu(this)">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="navbar-menu">
-        <li><a href="http://localhost:3030/index">Index</a></li>
-        <li><a href="http://localhost:3030/home">Mentors</a></li>
-        <li><a href="/chatbot">Ai Mentor</a></li>
-        <li><a href="/notes">Notes</a></li>
-      </ul>
-    </nav>
-
-    
-    <div class="wrap">
-      <div class="box">
-        <img
-          class="box-image"
-          src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
-          alt="Mentor Image"
-        />
-        <div class="title-flex">
-          <h3 class="box-title">Sachin Chaurasiya</h3>
-        </div>
-        <p class="user-follow-info">AI/ML Specialist</p>
-        <p class="description">
-          Experienced AI/ML specialist with a strong background in web
-          development, Node.js, Flask, and React. Passionate about mentoring
-          students and guiding them through hackathons and coding challenges.
-        </p>
-        <a href="http://localhost:3030/sachin" class="button">Book a Call</a>
-      </div>
-      <div class="box">
-        <img
-          class="box-image"
-          src="https://images.unsplash.com/photo-1488161628813-04466f872be2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNTMwNQ&ixlib=rb-1.2.1&q=85"
-          alt="Mentor Image"
-        />
-
-
-
-
-
-        <div class="title-flex">
-          <h3 class="box-title">Anjali Mehta</h3>
-        </div>
-        <p class="user-follow-info">Software Engineer</p>
-        <p class="description">
-          Skilled in full-stack development and cloud computing. Anjali has
-          mentored over 50 students in the last 2 years and specializes in
-          helping beginners excel in competitive programming.
-        </p>
-        <a href="https://calendly.com/anjali-mehta/15min" class="button">Book a Call</a>
-      </div>
-      <div class="box">
-        <img
-          class="box-image"
-          src="https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNTQzNA&ixlib=rb-1.2.1&q=85"
-          alt="Mentor Image"
-        />
-
-
-
-        
-        <div class="title-flex">
-          <h3 class="box-title">Rahul Sharma</h3>
-        </div>
-        <p class="user-follow-info">Data Scientist</p>
-        <p class="description">
-          Expert in data science and machine learning. Rahul has a passion for
-          data-driven solutions and mentoring students on data projects. He’s
-          guided multiple hackathon-winning teams.
-        </p>
-        <a href="https://calendly.com/rahul-sharma/15min" class="button">Book a Call</a>
-      </div>
-       -->
-
-
-
-       <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mentor Profiles</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color:rgb(189, 212, 255);
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Navbar Styles */
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 30px;
-        background: rgb(14, 74, 194);
-        color: white;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-      .navbar-logo {
-        font-size: 24px;
-        font-weight: 600;
-      }
-      .navbar-menu {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 25px;
-      }
-      .navbar-menu li {
-        display: inline-block;
-      }
-      .navbar-menu a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        font-size: 16px;
-        transition: color 0.3s ease;
-      }
-      .navbar-menu a:hover {
-        color: #0d2136;
-      }
-      .menu-toggle {
-        display: none;
-      }
-      @media (max-width: 768px) {
-        .navbar-menu {
-          display: none;
-          flex-direction: column;
-          background-color: rgba(0, 0, 0, 0.8);
-          position: absolute;
-          top: 60px;
-          right: 0;
-          width: 200px;
-          padding: 15px;
-          border-radius: 8px;
-        }
-        .navbar-menu li {
-          margin-bottom: 15px;
-        }
-        .menu-toggle {
-          display: block;
-          cursor: pointer;
-        }
-        .menu-toggle.active + .navbar-menu {
-          display: flex;
-        }
-      }
-      .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px;
-        background: white;
-        transition: all 0.3s ease;
-      }
-      .menu-toggle.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-      .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-      }
-      .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
-
-      /* Mentor Profiles Styles */
-      .wrap {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding: 20px;
-      }
-      .box {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        max-width: 300px;
-        text-align: center;
-        padding: 20px;
-        transition: transform 0.3s ease;
-      }
-      .box:hover {
-        transform: translateY(-10px);
-      }
-      .box-image {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-      .title-flex {
-        display: flex;
-        justify-content: space-evenly;
-        align-items:space-evenly  ;
-        margin-bottom: 15px;
-      }
-      .box-title {
-        font-size: 22px;
-        font-weight: 600;
-        margin: 0;
-      }
-      .user-follow-info {
-        font-size: 14px;
-        color: #888;
-      }
-      .description {
-        font-size: 16px;
-        color: #555;
-        margin-bottom: 20px;
-      }
-      .button {
-        text-decoration: none;
-        background-color:rgb(14, 74, 194);
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-        display: inline-block;
-        margin-bottom: 10px;
-      }
-      .button:hover {
-        background-color: #0b2138;
-      }
-    </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="navbar-logo">MentorHub</div>
-      <div class="menu-toggle" onclick="toggleMenu(this)">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="navbar-content">
+        <a href="/" class="navbar-logo">MentorHub</a>
+        <div class="menu-toggle" onclick="toggleMenu(this)">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="navbar-menu">
+          <li><a href="http://localhost:3030/index">Home</a></li>
+          <li><a href="http://localhost:3030/home">Mentors</a></li>
+          <li><a href="/chatbot">AI Mentor</a></li>
+          <li><a href="/notes">Notes</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
       </div>
-      <ul class="navbar-menu">
-        <li><a href="http://localhost:3030/index">Index</a></li>
-        <li><a href="http://localhost:3030/home">Mentors</a></li>
-        <li><a href="/chatbot">Ai Mentor</a></li>
-        <li><a href="/notes">Notes</a></li>
-        <li><a href="/blog">blog</a></li>
-
-      </ul>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Connect with Expert Mentors</h1>
+      <p>Find the perfect mentor to guide you through your learning journey and help you achieve your goals.</p>
+      <a href="#mentors" class="button button-outline">Find Your Mentor</a>
+    </section>
 
+    <!-- Features Section -->
+    <section class="features">
+      <div class="features-container">
+        <div class="features-title">
+          <h2>Why Choose MentorHub?</h2>
+          <p>Discover the benefits of our mentorship platform</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-users feature-icon"></i>
+            <h3>Expert Mentors</h3>
+            <p>Connect with industry professionals who have proven track records</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-clock feature-icon"></i>
+            <h3>Flexible Scheduling</h3>
+            <p>Book sessions that fit your schedule and learning pace</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-laptop-code feature-icon"></i>
+            <h3>Personalized Learning</h3>
+            <p>Get customized guidance tailored to your goals and needs</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-comments feature-icon"></i>
+            <h3>AI Support</h3>
+            <p>Access our AI mentor for instant help and resources</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-
-
+    <!-- Statistics Section -->
+    <section class="statistics">
+      <div class="statistics-container">
+        <div class="stat-item">
+          <h3>500+</h3>
+          <p>Active Mentors</p>
+        </div>
+        <div class="stat-item">
+          <h3>10,000+</h3>
+          <p>Students Mentored</p>
+        </div>
+        <div class="stat-item">
+          <h3>95%</h3>
+          <p>Satisfaction Rate</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p>Support Available</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Mentor Profiles -->
-    <div class="wrap">
-      <div class="box">
-        <img
-          class="box-image"
-          src="https://images.unsplash.com/photo-1488161628813-04466f872be2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNTMwNQ&ixlib=rb-1.2.1&q=85"
-          alt="Mentor Image"
-        />
-        <div class="title-flex">
-          <h3 class="box-title">Sachin Chaurasiya</h3>
+    <section id="mentors" class="mentors">
+      <div class="mentors-container">
+        <div class="mentors-title">
+          <h2>Our Featured Mentors</h2>
+          <p>Learn from the best in the industry</p>
         </div>
-        <p class="user-follow-info">AI/ML Specialist</p>
-        <p class="description">
-          Experienced AI/ML specialist with a strong background in web
-          development, Node.js, Flask, and React. Passionate about mentoring
-          students and guiding them through hackathons and coding challenges.
-        </p>
-       
-        <!-- Updated "Book a Call" button for Sachin -->
-        <button class="button" id="payBtn">Book a Call</button>
-      </div>
+        <div class="mentor-grid">
+          <div class="mentor-card">
+            <img
+              class="mentor-image"
+              src="https://images.unsplash.com/photo-1488161628813-04466f872be2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMxNTMwNQ&ixlib=rb-1.2.1&q=85"
+              alt="Mentor Image"
+            />
+            <div class="mentor-content">
+              <h3 class="mentor-name">Sachin Chaurasiya</h3>
+              <p class="mentor-specialty">AI/ML Specialist</p>
+              <p class="mentor-description">
+                Experienced AI/ML specialist with a strong background in web development, Node.js, Flask, and React. Passionate about mentoring students and guiding them through hackathons and coding challenges.
+              </p>
+              <a href="http://localhost:3030/sachin" class="button">Book a Call</a>
+            </div>
+          </div>
 
-      <div class="box">
-        <img
-          class="box-image"
-          src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
-          alt="Mentor Image"
-        />
-        <div class="title-flex">
-          <h3 class="box-title">Harpreet</h3>
+          <div class="mentor-card">
+            <img
+              class="mentor-image"
+              src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
+              alt="Mentor Image"
+            />
+            <div class="mentor-content">
+              <h3 class="mentor-name">Harpreet</h3>
+              <p class="mentor-specialty">Full Stack Developer</p>
+              <p class="mentor-description">
+                Experienced full-stack developer specializing in modern web technologies. Passionate about teaching and helping students master the art of web development.
+              </p>
+              <a href="http://localhost:3030/harpreet" class="button">Book a Call</a>
+            </div>
+          </div>
+
+          <div class="mentor-card">
+            <img
+              class="mentor-image"
+              src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
+              alt="Mentor Image"
+            />
+            <div class="mentor-content">
+              <h3 class="mentor-name">Riya Singh</h3>
+              <p class="mentor-specialty">Data Scientist</p>
+              <p class="mentor-description">
+                Expert data scientist with a focus on machine learning and analytics. Helps students understand complex data concepts and build practical skills.
+              </p>
+              <a href="http://localhost:3030/riya" class="button">Book a Call</a>
+            </div>
+          </div>
         </div>
-        <p class="user-follow-info">AI/ML Specialist</p>
-        <p class="description">
-          Experienced AI/ML specialist with a strong background in web
-          development, Node.js, Flask, and React. Passionate about mentoring
-          students and guiding them through hackathons and coding challenges.
-        </p>
-        <!-- Updated "Book a Call" button for Sachin -->
-        <button class="button" id="payBtn">Book a Call</button>
       </div>
+    </section>
 
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="cta-container">
+        <h2>Ready to Start Your Learning Journey?</h2>
+        <p>Join thousands of students who have transformed their careers with MentorHub</p>
+        <a href="/signup" class="button button-outline">Get Started Today</a>
+      </div>
+    </section>
 
-
-      <div class="box">
-        <img
-          class="box-image"
-          src="https://images.unsplash.com/photo-1622219809260-ce065fc5277f?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMzMwNjYxOQ&ixlib=rb-1.2.1&q=85"
-          alt="Mentor Image"
-        />
-        <div class="title-flex">
-          <h3 class="box-title">Riya Sing</h3>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>MentorHub</h3>
+          <p>Connecting ambitious learners with expert mentors to achieve their goals.</p>
         </div>
-        <p class="user-follow-info">AI/ML Specialist</p>
-        <p class="description">
-          Experienced AI/ML specialist with a strong background in web
-          development, Node.js, Flask, and React. Passionate about mentoring
-          students and guiding them through hackathons and coding challenges.
-        </p>
-        <!-- Updated "Book a Call" button for Sachin -->
-        <button class="button" id="payBtn">Book a Call</button>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/mentors">Find Mentors</a></li>
+            <li><a href="/become-mentor">Become a Mentor</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/tutorials">Tutorials</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:support@mentorhub.com">support@mentorhub.com</a></li>
+            <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+          </ul>
+        </div>
       </div>
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <div class="footer-bottom">
+        <p>&copy; 2024 MentorHub. All rights reserved.</p>
+      </div>
+    </footer>
 
     <script>
-      document.getElementById('payBtn').onclick = async function (e) {
-        e.preventDefault();
-
-        // Make a request to your backend to create an order
-        const response = await fetch('http://localhost:3030/razorpay', {
-          method: 'POST',
-        });
-
-        const data = await response.json(); // Response contains order ID, amount, and currency
-
-        const options = {
-          key: 'rzp_test_1THKCF7b2uMg8i', // Replace with your Razorpay Key ID
-          amount: data.amount, // Amount is in paisa, so it's multiplied by 100 in the backend
-          currency: data.currency,
-          name: 'BlueMediaXpert',
-          description: 'Mentor Call Booking',
-          image: 'logo.png', // Logo URL
-          order_id: data.id, // Order ID from Razorpay
-          handler: function (response) {
-            // Payment successful, redirect to /sachin
-            window.location.href = '/sachin';
-          },
-          prefill: {
-            name: 'Sachin Chaurasiya',
-            email: 'mrsachinchaurasiya@gmail.com',
-            contact: '7070416209',
-          },
-          theme: {
-            color: '#3399cc',
-          },
-        };
-
-        // Open Razorpay payment modal
-        const rzp1 = new Razorpay(options);
-        rzp1.open();
-      };
+      function toggleMenu(element) {
+        element.classList.toggle('active');
+      }
     </script>
   </body>
 </html>

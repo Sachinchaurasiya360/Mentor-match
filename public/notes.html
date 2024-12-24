@@ -3,68 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .document-list {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-        }
-        .document-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .document-item:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-        .download-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .download-button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Notes & Resources - MentorHub</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/notes.css">
 </head>
 <body>
-    <div class="document-list">
-        <h2>Notes and Notices</h2>
-        <div class="document-item">
-            <span>DWM Notes</span>
-            <a href="../public/notes.pdf" download="Document1.pdf" class="download-button">Download</a>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/" class="navbar-logo">MentorHub</a>
+            <div class="menu-toggle" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="http://localhost:3030/index">Home</a></li>
+                <li><a href="http://localhost:3030/home">Mentors</a></li>
+                <li><a href="/chatbot">AI Mentor</a></li>
+                <li><a href="/notes" class="active">Notes</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
         </div>
-        <div class="document-item">
-            <span>Web computing Notes</span>
-            <a href="../public/notes.pdf" download="Document2.pdf" class="download-button">Download</a>
-        </div>
-        <div class="document-item">
-            <span>Computer Network Notess</span>
-            <a href="../static/notes.pdf" download="Document3.pdf" class="download-button">Download</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="notes-container">
+        <!-- Header -->
+        <div class="notes-header">
+            <h1>Notes & Resources</h1>
+            <p>Access course materials, study guides, and important notices to support your learning journey.</p>
         </div>
 
-        <div class="document-item">
-            <span>Hackathon News</span>
-            <a href="../public/notes.pdf" download="Document3.pdf" class="download-button">Download</a>
+        <!-- Filters -->
+        <div class="notes-filters">
+            <button class="filter-button active">All</button>
+            <button class="filter-button">Course Notes</button>
+            <button class="filter-button">Study Guides</button>
+            <button class="filter-button">Notices</button>
+            <button class="filter-button">Events</button>
         </div>
-        <div class="document-item">
-            <span>TPO Even</span>
-            <a href="../public/notes.pdf" download="Document3.pdf" class="download-button">Download</a>
-        </div>
-        <div class="document-item">
-            <span>SAAM Notice</span>
-            <a href="../public/notes.pdf" download="Document3.pdf" class="download-button">Download</a>
+
+        <!-- Notes Grid -->
+        <div class="notes-grid">
+            <!-- DWM Notes -->
+            <div class="note-card">
+                <div class="note-content">
+                    <span class="note-category">Course Notes</span>
+                    <h3 class="note-title">Data Warehouse and Mining Notes</h3>
+                    <div class="note-meta">
+                        <span><i class="far fa-calendar"></i> Updated Dec 20, 2024</span>
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <a href="../public/notes.pdf" download="DWM_Notes.pdf" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Web Computing Notes -->
+            <div class="note-card">
+                <div class="note-content">
+                    <span class="note-category">Course Notes</span>
+                    <h3 class="note-title">Web Computing Notes</h3>
+                    <div class="note-meta">
+                        <span><i class="far fa-calendar"></i> Updated Dec 18, 2024</span>
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <a href="../public/notes.pdf" download="WebComputing_Notes.pdf" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Computer Networks -->
+            <div class="note-card">
+                <div class="note-content">
+                    <span class="note-category">Course Notes</span>
+                    <h3 class="note-title">Computer Networks Notes</h3>
+                    <div class="note-meta">
+                        <span><i class="far fa-calendar"></i> Updated Dec 15, 2024</span>
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <a href="../static/notes.pdf" download="Networks_Notes.pdf" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hackathon Notice -->
+            <div class="note-card">
+                <div class="note-content">
+                    <span class="note-category">Events</span>
+                    <h3 class="note-title">Upcoming Hackathon Details</h3>
+                    <div class="note-meta">
+                        <span><i class="far fa-calendar"></i> Posted Dec 22, 2024</span>
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <a href="../public/notes.pdf" download="Hackathon_Notice.pdf" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- TPO Event -->
+            <div class="note-card">
+                <div class="note-content">
+                    <span class="note-category">Events</span>
+                    <h3 class="note-title">Training & Placement Updates</h3>
+                    <div class="note-meta">
+                        <span><i class="far fa-calendar"></i> Posted Dec 21, 2024</span>
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <a href="../public/notes.pdf" download="TPO_Updates.pdf" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+
+            <!-- SAAM Notice -->
+            <div class="note-card">
+                <div class="note-content">
+                    <span class="note-category">Notices</span>
+                    <h3 class="note-title">SAAM Important Notice</h3>
+                    <div class="note-meta">
+                        <span><i class="far fa-calendar"></i> Posted Dec 20, 2024</span>
+                        <span><i class="far fa-file-pdf"></i> PDF</span>
+                    </div>
+                    <a href="../public/notes.pdf" download="SAAM_Notice.pdf" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle('active');
+            document.querySelector('.navbar-menu').classList.toggle('active');
+        }
+
+        // Handle filter buttons
+        const filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

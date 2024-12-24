@@ -3,190 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Blog</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f3f4f6;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    background-color: #4c6fbf;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo h1 {
-    color: #fff;
-    font-size: 28px;
-}
-
-header nav ul {
-    list-style: none;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Blog Post Section */
-.blog-posts {
-    margin: 50px 0;
-}
-
-.post {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.post:hover {
-    transform: translateY(-5px);
-}
-
-.post img {
-    width: 400px;
-    height: 200px;
-    border-radius: 10px;
-    margin-right: 20px;
-    object-fit: cover;
-}
-
-.post-content {
-    flex: 1;
-}
-
-.post-content h2 {
-    font-size: 22px;
-    color:  rgb(14, 74, 194);
-    margin-bottom: 10px;
-}
-
-.post-content .meta {
-    font-size: 14px;
-    color:  rgb(14, 74, 194);
-    margin-bottom: 10px;
-}
-
-.post-content p {
-    font-size: 16px;
-    color:  rgb(14, 74, 194);
-    margin-bottom: 20px;
-}
-
-.post-content .read-more {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #2980b9;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.post-content .read-more:hover {
-    background-color: #073656;
-}
-
-/* Footer */
-footer {
-    background-color:  #4c6fbf;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-    </style>
+    <title>MentorHub Blog - Tech Insights & Learning Resources</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Mentor Match</h1>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/" class="navbar-logo">MentorHub</a>
+            <div class="menu-toggle" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            
-            </nav>
+            <ul class="navbar-menu">
+                <li><a href="http://localhost:3030/index">Home</a></li>
+                <li><a href="http://localhost:3030/home">Mentors</a></li>
+                <li><a href="/chatbot">AI Mentor</a></li>
+                <li><a href="/notes">Notes</a></li>
+                <li><a href="/blog" class="active">Blog</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <h1>Tech Insights & Learning Resources</h1>
+        <p>Discover the latest in technology, programming, and career development</p>
     </header>
 
-    <section class="blog-posts">
-        <div class="container">
+    <!-- Blog Content -->
+    <main class="blog-container">
+        <!-- Search Bar -->
+        <div class="blog-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search articles...">
+        </div>
+
+        <!-- Category Filters -->
+        <div class="blog-filters">
+            <button class="filter-button active">All</button>
+            <button class="filter-button">AI & ML</button>
+            <button class="filter-button">Web Development</button>
+            <button class="filter-button">Career Growth</button>
+            <button class="filter-button">Programming</button>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
             <!-- Blog Post 1 -->
-            <div class="post">
-                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Artificial Intelligence">
-                <div class="post-content">
-                    <h2>Exploring Artificial Intelligence</h2>
-                    <p class="meta">Posted on October 3, 2024 by Sachin Chaurasiya</p>
-                    <p>Artificial Intelligence is revolutionizing industries across the globe. Learn about its core concepts and applications in this article.</p>
-                    <a href="#" class="read-more">Read More</a>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Artificial Intelligence" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">AI & ML</span>
+                    <h2 class="blog-title">Exploring the Future of Artificial Intelligence</h2>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> October 3, 2024</span>
+                        <span><i class="far fa-user"></i> Sachin Chaurasiya</span>
+                    </div>
+                    <p class="blog-excerpt">Artificial Intelligence is revolutionizing industries across the globe. Learn about its core concepts and applications in this comprehensive guide.</p>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- Blog Post 2 -->
-            <div class="post">
-                <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514" alt="Web Development Workspace">
-                <div class="post-content">
-                    <h2>Mastering Web Development</h2>
-                    <p class="meta">Posted on September 20,2024 by Sachin Chaurasiya</p>
-                    <p>Web development forms the backbone of the modern internet. Get a deep dive into essential technologies for front-end and back-end development.</p>
-                    <a href="#" class="read-more">Read More</a>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514" alt="Web Development" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Web Development</span>
+                    <h2 class="blog-title">Modern Web Development: A Complete Guide</h2>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> September 20, 2024</span>
+                        <span><i class="far fa-user"></i> Sachin Chaurasiya</span>
+                    </div>
+                    <p class="blog-excerpt">Web development forms the backbone of the modern internet. Get a deep dive into essential technologies for front-end and back-end development.</p>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
-            </div>
+            </article>
 
             <!-- Blog Post 3 -->
-            <div class="post">
-                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Digital Technology">
-                <div class="post-content">
-                    <h2>Future of Digital Technology</h2>
-                    <p class="meta">Posted on September 10, 2024 by Sachin Chaurasiya</p>
-                    <p>Digital technology is rapidly evolving. Discover trends and innovations that will shape the tech landscape in the coming years.</p>
-                    <a href="#" class="read-more">Read More</a>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68" alt="Digital Technology" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Career Growth</span>
+                    <h2 class="blog-title">Building a Successful Career in Tech</h2>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> September 10, 2024</span>
+                        <span><i class="far fa-user"></i> Sachin Chaurasiya</span>
+                    </div>
+                    <p class="blog-excerpt">Digital technology is rapidly evolving. Discover trends and innovations that will shape the tech landscape in the coming years.</p>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" alt="Programming" class="blog-image">
+                <div class="blog-content">
+                    <span class="blog-category">Programming</span>
+                    <h2 class="blog-title">Essential Programming Concepts Every Developer Should Know</h2>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> September 5, 2024</span>
+                        <span><i class="far fa-user"></i> Sachin Chaurasiya</span>
+                    </div>
+                    <p class="blog-excerpt">Master the fundamental programming concepts that will make you a better developer, regardless of your chosen technology stack.</p>
+                    <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>MentorHub</h3>
+                <p>Connecting ambitious learners with expert mentors to achieve their goals.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/mentors">Find Mentors</a></li>
+                    <li><a href="/become-mentor">Become a Mentor</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/tutorials">Tutorials</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/support">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="mailto:support@mentorhub.com">support@mentorhub.com</a></li>
+                    <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Tech Insights. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MentorHub. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle('active');
+        }
+
+        // Add active class to filter buttons
+        const filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
